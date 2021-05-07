@@ -2,6 +2,8 @@
 
 * NOT DONE YET *
 
+Python-based application
+
 Imports: Pandas, Numpy, Scikit-learn
 
 tldr: Prints which machine learning classification model would work best for a given dataset. 
