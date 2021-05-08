@@ -1,7 +1,5 @@
 # ML_Classification_optimizer
 
-* NOT DONE YET *
-
 Python-based application
 
 Imports: Pandas, Scikit-learn
