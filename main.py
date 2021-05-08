@@ -1,11 +1,10 @@
-import numpy as np
 import pandas as pd
 import variables
 
 # Get dataset
 dataset = pd.read_csv('Social_Network_Ads_modified.csv')
-X = dataset.iloc[:, :-1].values
-y = dataset.iloc[:, -1].values
+X = dataset.iloc[:, :-1].values # everything but the last column
+y = dataset.iloc[:, -1].values # last column only
 
 # Getting training set and test set
 from sklearn.model_selection import train_test_split
@@ -85,4 +84,13 @@ accuracy_score_dict = { accuracy_first:'logistic model', accuracy_second:'KNN mo
                         accuracy_fourth:'Kernel SVM model', accuracy_fifth:'Naive Baynes model',
                         accuracy_sixth:'Decision Tree model', accuracy_seventh:'Random Forest model'}
 
-print(f"{accuracy_score_dict[max_accuracy]} has the highest accuracy score")
+print(f"{accuracy_score_dict[max_accuracy]} has the highest accuracy score of {max_accuracy * 100}%")
+
+# print the corresponding confusion matrix to the model that had the highest accuracy score
+from sklearn.metrics import confusion_matrix
+
+confusion_matrix_dict = { accuracy_first:y_pred_first, accuracy_second:y_pred_second, accuracy_third:y_pred_third,
+                          accuracy_fourth:y_pred_fourth, accuracy_fifth:y_pred_fifth, accuracy_sixth:y_pred_sixth,
+                          accuracy_seventh:y_pred_seventh}
+
+print(confusion_matrix(y_test, confusion_matrix_dict[max_accuracy]))
