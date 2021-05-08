@@ -14,3 +14,4 @@ Credit to the Machine Learning course for providing the test data and the founda
 
 notes: 
 - The variables file import that the main.py file is referring to is another .py file that stores strings that the models use 
+- In order for the algorithm to work, we must ensure that the dependent variables are placed before the independent variable in terms of column order. This means that the independent variable in which the classification is trying to guess is going to be in the last column of the .csv file 
